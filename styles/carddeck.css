@@ -8,6 +8,11 @@ body{
     width:80%;
 }
 
+a{
+    color:black;
+    font-weight:bold;
+}
+
 .playingcard{
     border:solid black 1px;
 }
@@ -47,4 +52,13 @@ body{
 
 #error{
     color:red;
+}
+
+#firstcard{
+    color:#aaa;
+    transition:0.2s;
+}
+#firstcard:hover{
+    color:black;
+    transition:0.2s;
 }
