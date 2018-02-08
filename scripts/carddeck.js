@@ -69,6 +69,13 @@ function displayHand(handArray){
         image = "<img class=\"playingcard\" src=\"images/" + handArray[card] + ".png\">"; //Playing card image tag
         handCards.innerHTML += "<div class=\"showhand\">" + image + "<br>" + parseCode(handArray[card]) + "</div>"; //div block for formatting playing card display
     }
+    
+    //Each time the displayHand function is called, create "click" listeners for each card so that we can interact with each card individually
+    //This is just set-up for 'remove card' functionality
+    var showHandElements = document.getElementsByClassName("showhand");
+    for (var i = 0; i < showHandElements.length; i++) {
+        showHandElements[i].addEventListener("click", removeCard);
+    }
 }
 
 //BUTTON: Displays the top card in the deck
@@ -113,7 +120,6 @@ function drawClick() {
             count -= 1;
         }
     }
-    
 }
 
 //BUTTON: Sorts the cards in the hand
@@ -132,6 +138,21 @@ function resetClick() {
     document.getElementById("decknumber").innerHTML = deckArray.length;
     document.getElementById("handnumber").innerHTML = handArray.length;
     displayHand(handArray);
+    document.getElementById("firstcard").innerHTML = "";
+    document.getElementById("error").innerHTML = "";
+}
+
+//BUTTON: Return cards from hand to the top of the deck
+function removeCard(){
+    index = Array.from(this.parentNode.children).indexOf(this); //Finding the index of the playing card which was clicked
+    cardCode = handArray[index];
+    handArray.splice(index,1); //Removing the card from the hand
+    deckArray.unshift(cardCode); //Adding the card to the top of the deck
+    
+    //Recalculating the number of cards in deck/hand, refreshing the display
+    displayHand(handArray);
+    document.getElementById("decknumber").innerHTML = deckArray.length;
+    document.getElementById("handnumber").innerHTML = handArray.length;
     document.getElementById("firstcard").innerHTML = "";
     document.getElementById("error").innerHTML = "";
 }
