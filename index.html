@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Card deck test</title>
+        <link rel="stylesheet" href="styles/carddeck.css">
+    </head>
+    <body>
+        <h1>Magician's deck of cards</h1>
+        <p>
+            Instructions: <br>
+            <ul>
+            <li>Use the "Shuffle deck" button to deftly shuffle the cards in the deck without affecting the cards in your hand</li>
+            <li>Use your advanced sleight of hand to take a quick look at the first card in the deck using the "Peek at top card" button</li>
+            <li>Pick up extra cards while the audience are distracted by using the input field to determine the number of cards that are drawn for each click of the "Draw" button</li>
+            <li>Effortlessly sort the cards in your hand in the blink of an eye to everyone's amazement using the "Sort cards" button</li>
+            <li>Do it all over again: Return to the original set-up of a sorted 52-card deck and an empty hand using the "Reset" button</li>
+            </ul>
+        </p>
+        
+        <div id="deck">
+            Number of cards in deck: <span id="decknumber">52</span>
+            <br>
+            <span id="firstcard"></span><span id="error"></span>
+        </div>
+        <br>
+        
+        <label>
+            Number of cards to draw:
+            <input id="drawinp" type="text" value="1"></input>
+        </label>
+        <br><br>
+        <div class="button" id="shuffle">Shuffle deck</div>
+        <div class="button" id="topcard">Peek at top card</div>
+        <div class="button" id="draw">Draw</div>
+        <div class="button" id="sort">Sort cards</div>
+        <div class="button" id="reset">Reset</div>
+        <br><br><br>
+        
+        <div id="hand">Number of cards in hand: <span id="handnumber">0</span><br>
+            <span id="handcards"></span>
+        </div>
+        
+        <script src="scripts/carddeck.js"></script>
+    </body>
+</html>

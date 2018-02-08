@@ -1,0 +1,50 @@
+html{
+    font-family:sans-serif;
+}
+
+body{
+    padding:0;
+    margin:5% 10%;
+    width:80%;
+}
+
+.playingcard{
+    border:solid black 1px;
+}
+
+.showhand{
+    float:left;
+    margin:2px;
+    text-align:center;
+}
+
+.button{
+    float:left;
+    padding:4px;
+    border:solid #222 2px;
+    background:white;
+    margin:3px;
+    color:#222;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+.button:hover{
+    background-color:#222;
+    color:white;
+    transition:0.2s;
+}
+
+#reset{
+    color:#f22;
+    border:solid #f22 2px;
+}
+
+#reset:hover{
+    background-color:#f22;
+    color:white;
+}
+
+#error{
+    color:red;
+}
